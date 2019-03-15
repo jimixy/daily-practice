@@ -8,7 +8,6 @@ const JSONtoCSV = (arr, columns, delimiter = ',') => [
     )
 ].join('\n');
 
-
 const users = [{
         name: 'xiaoer',
         age: 24,
@@ -27,6 +26,7 @@ const users = [{
 ]
 
 function downloadUserData(target) {
-    const csv = JSONtoCSV(users, ['name', 'age', 'sex'])
+    const csv = JSONtoCSV(users, ['name', 'age', 'sex']);
+    console.log('csv', csv);
     target.href = `data:text/csv;charset=utf-8,\ufeff${csv}`
 }

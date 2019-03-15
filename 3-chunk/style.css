@@ -1,0 +1,13 @@
+
+#container {
+    height: 100vh;
+}
+
+.news{
+    height: 100vh;
+}
+
+.news>div {
+    text-align: center;
+    height: 50px;
+}
