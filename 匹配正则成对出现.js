@@ -5,17 +5,16 @@
 
 const judgeDubble = str => {
     const newStr = str.replace(/\([^()]*\)/g, '')
-    if (newStr === '') {
+    const leftLen = newStr.match(/\(/g).length > 1
+    const rightLen = newStr.match(/\)/g).length > 1
+    if (!leftLen && !rightLen) {
         return true
-    } else if (newStr.length === 1) {
+    } else if ((leftLen && !rightLen) || (!leftLen && rightLen)) {
         return false
     } else {
         return judgeDubble(newStr)
     }
 }
 
-const res = judgeDubble('((234))()()()')
-const res2 = judgeDubble('(33(wwehhhw?2342232233233322323e23d_=))()()()')
-const res3 = judgeDubble('((234))()()())')
-
-console.log('res', res, res2, res3) // true, true, false
+const res = judgeDubble('213((23(234)))(3)33()(22)')
+console.log('res', res)
