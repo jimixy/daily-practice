@@ -5,8 +5,8 @@
 
 const judgeDubble = str => {
     const newStr = str.replace(/\([^()]*\)/g, '')
-    const leftLen = newStr.match(/\(/g).length > 1
-    const rightLen = newStr.match(/\)/g).length > 1
+    const leftLen = (newStr.match(/\(/g) || []).length > 1
+    const rightLen = (newStr.match(/\)/g) || []).length > 1
     if (!leftLen && !rightLen) {
         return true
     } else if ((leftLen && !rightLen) || (!leftLen && rightLen)) {
@@ -16,5 +16,5 @@ const judgeDubble = str => {
     }
 }
 
-const res = judgeDubble('213((23(234)))(3)33()(22)')
+const res = judgeDubble('(213(23(234)(3)33())(22))')
 console.log('res', res)
