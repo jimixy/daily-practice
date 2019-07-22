@@ -1,5 +1,4 @@
 //github.com/Advanced-Frontend/Daily-Interview-Question/issues/171
-https:;
 
 ;(function() {
     var getItem = localStorage.getItem.bind(localStorage)
