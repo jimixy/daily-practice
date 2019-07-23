@@ -44,3 +44,15 @@ function flatten3(arr) {
 }
 
 console.log(flatten3(arr))
+
+/**
+ * 方法4
+ */
+const flatten4 = arr.flat(Infinity)
+console.log('flatten4', flatten4)
+
+// 拍平 去重 排序
+const flatten5 = Array.from(new Set(arr.flat(Infinity))).sort((a, b) => {
+    return a - b
+})
+console.log('flatten5', flatten5)

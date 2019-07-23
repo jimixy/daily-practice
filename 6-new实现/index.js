@@ -1,3 +1,8 @@
+/**
+ * 方法1
+ * @param {function} Con
+ * @param  {...any} args
+ */
 function create(Con, ...args) {
     let obj = {}
     // 等于 obj.__proto__ = Con.prototype
@@ -23,3 +28,12 @@ console.log(a.name) // 'yck'
 console.log(a.age) // 26
 
 a.sayName() // 'yck'
+
+/**
+ * 方法2
+ */
+function _new(fn, ...arg) {
+    const obj = Object.create(fn.prototype)
+    const ret = fn.apply(obj, arg)
+    return ret instanceof Object ? ret : obj
+}
