@@ -9,7 +9,7 @@ const judgeDubble = str => {
     const rightLen = (newStr.match(/\)/g) || []).length > 1
     if (!leftLen && !rightLen) {
         return true
-    } else if ((leftLen && !rightLen) || (!leftLen && rightLen)) {
+    } else if ((leftLen && !rightLen) || (!leftLen && rightLen) || newStr === str) {
         return false
     } else {
         return judgeDubble(newStr)
