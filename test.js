@@ -7,6 +7,7 @@ function ArrayList() {
         return array.join()
     }
     this.selectionSort = function(array) {
+        // 选择排序
         var length = array.length,
             indexMin
         for (var i = 0; i < length - 1; i++) {
